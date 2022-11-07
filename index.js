@@ -4,7 +4,7 @@ const reduxLogger = require('redux-logger')
 const createStore = redux.createStore
 const combineReducers = redux.combineReducers
 const applyMiddleWare = redux.applyMiddleware
-const logger = reduxLogger.createLogger()
+const Logger = reduxLogger.createLogger()
 
 
 
@@ -14,13 +14,14 @@ const BUY_ICECREAM = 'BUY_ICECREAM'
 function buyCake() {
     return {
         type: BUY_CAKE,
-        info: 'First redux action'
+        info: 'Buy cake action implemented'
     }
 }
 
 function buyIceCream() {
     return {
         type: BUY_ICECREAM,
+        info: 'Buy iceCream action implemented'
     }
 }
 
@@ -57,7 +58,7 @@ const rootReducer = combineReducers({
     iceCream: iceCreamReducer
 })
 
-const store = createStore(rootReducer, applyMiddleWare(logger))
+const store = createStore(rootReducer, applyMiddleWare(Logger))
 store.dispatch(buyCake())
 store.dispatch(buyCake())
 store.dispatch(buyCake())
